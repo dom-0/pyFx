@@ -23,3 +23,4 @@ print(
     f"Object is type {type(obj)} and the memory footprint is {sys.getsizeof(obj)}"
 )
 
+
