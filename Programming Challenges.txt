@@ -11,3 +11,6 @@ min combination length = 3 = 5+4+1 (can also be 5+3+2) but first solution is ok
 
 Find the occurances of "smas" in "hatsmasmaspsmas"
 Mind it there are 3 occurances not 2 
+
+
+Regex of IP address :-) This is hell of a job
