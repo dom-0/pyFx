@@ -14,3 +14,10 @@ Mind it there are 3 occurances not 2
 
 
 Regex of IP address :-) This is hell of a job
+
+
+Create a python image processor that takes arguments to 
+1) Change file type
+2) Resize
+3) Decrease Quality / reduce storage
+4) Rotate along with degree
