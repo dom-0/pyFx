@@ -1,4 +1,6 @@
 bat.py
 .gitignore
 _ToDo
-mmcm.jpg
+*.jpg
+*.jpeg
+*.png
