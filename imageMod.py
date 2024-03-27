@@ -10,6 +10,10 @@
 #   10 - output file extension is not the same as converted file type...Not that it matters! 
 #   11 - source file couldnt be deleted
 
+### Examples
+#   python3 imageMod.py -i mmcm.jpg -o as.jpeg -t jpeg  -l 100 -w 100 -r 180 -a 12 -d
+#   python3 imageMod.py -i mmcm.jpg -o as.jpeg -t jpeg -r 90 -a 100 -q 25
+
 
 import argparse
 import sys, os
@@ -34,11 +38,10 @@ def set_aspectRatio(*args, **kwargs) -> object:
     mod_l = l / 100 * ar
     mod_w = w / 100 * ar
     image.thumbnail((mod_l,mod_w))
+    print (f"Image size decreased with the entered aspect ratio of: {ar}")
     return (image)
 
     
-
-        
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -64,6 +67,22 @@ if __name__ == '__main__':
     
     img = Image.open(inFile)
     
+
+    if args.length or args.width:
+        (l, w) = img.size
+        mod_l = l if not args.length else args.length
+        mod_w = w if not args.width else args.width
+        mod_l, mod_w = int(mod_l), int(mod_w)
+        if args.aspect: 
+            img.thumbnail((mod_l,mod_w))
+            print("Ignoring value of Aspect Ratio entered since length and width have been entered")
+            print("Adjusting new image size to the best possible Aspect Ratio...")
+            args.aspect = False
+        else: 
+            img = img.resize((mod_l,mod_w))
+
+
+        
     if (args.rotate): img = img.rotate(int(args.rotate))
     
     if (args.aspect): img = set_aspectRatio(args.aspect, img)
@@ -78,5 +97,10 @@ if __name__ == '__main__':
         img.save(outFile)
 
     if args.delete: del_srcFile()
-    print(img.size)
+    
+    print(f"\nNew file has been generated as: {outFile}")
+    print(f"Size: {img.size}")
+    print(f"Format: {img.format}")
+    print(f"Mode: {img.mode}\n")
+    
     
