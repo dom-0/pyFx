@@ -9,3 +9,5 @@ def genFib(num):
     
 for i in genFib(1000):
   print (i)
+
+# gen dist
