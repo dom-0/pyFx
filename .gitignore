@@ -1,6 +1,5 @@
-bat.py
 .gitignore
-_ToDo
 *.jpg
 *.jpeg
 *.png
+_*
