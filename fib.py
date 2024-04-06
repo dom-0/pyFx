@@ -10,4 +10,4 @@ def genFib(num):
 for i in genFib(1000):
   print (i)
 
-# gen dist
+# gen dist - fixed with dt issue
