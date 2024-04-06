@@ -7,6 +7,7 @@ travel = [('A', 'V'), ('X', 'C'), ('M', 'A'), ('V', 'X')]
 
 secondary = list(map((lambda x: x[1]), travel))
 path = list(filter((lambda x: x[0] not in secondary), travel))
+print(path)
 # path is where he starts from
 
 for _ in travel:
