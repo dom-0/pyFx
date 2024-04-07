@@ -1,11 +1,11 @@
 travel = [('A', 'V'), ('X', 'C'), ('M', 'A'), ('V', 'X')]
 dests = list(x[1] for x in travel)
-path = []
-for trip in travel:
-    origin = trip[0]
-    if origin not in dests:
-        path.append(trip) # starts from here
-        break
+
+
+path = list(filter(lambda x: x[0] not in dests, travel))
+
+
+
 for _ in path:
     for tup in travel:
         if _[1] == tup[0]:
