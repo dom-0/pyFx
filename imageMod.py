@@ -63,7 +63,7 @@ if __name__ == '__main__':
     
     inFile, outFile = args.input, args.output
 
-    checkType(args.type)
+    #checkType(args.type)
     
     img = Image.open(inFile)
     
