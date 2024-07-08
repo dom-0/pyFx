@@ -1,11 +1,11 @@
 from pypdf import PdfMerger
 
-pdfs = ['s1.pdf', 's2.pdf', 's3.pdf']
+pdfs = ['1.pdf', '2.pdf', '3.pdf', '4.pdf', '5.pdf']
 
 merger = PdfMerger()
 
 for pdf in pdfs:
     merger.append(pdf)
 
-merger.write("Sudeshna.pdf")
+merger.write("FINAL.pdf")
 merger.close()
