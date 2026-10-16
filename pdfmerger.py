@@ -9,4 +9,4 @@ for pdf in pdfs:
 
 merger.write("FINAL.pdf")
 merger.close()
-# useless commentß
+# useless
